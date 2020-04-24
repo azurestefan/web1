@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #272727;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+h3{
+    text-transform: uppercase;
+}
+
+.container {
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    margin: 1em;
+}
+
+.card::before, .card::after {
+    content: '';
+    position: absolute;
+    opacity 1;
+    transition: transform ease-out 250ms;
+}
+
+.card::before {
+    top: 1em;
+    left: 1em;
+    right: 1em;
+    border-top: 3px solid #fff;
+    transform: scale(0,1);
+    transform-origin: left;
+}
+
+.card::after {
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+    border-bottom: 3px solid #fff;
+    transform: scale(0,1);
+    transform-origin: right;
+}
+
+.card:hover::before, .card:hover::after{
+    transform: scale(1,1);
+}
+
+.card_img {
+    width: 100%;
+    display: block;
+    transition: opacity ease-out 250ms;
+}
+
+.card::hover .card_img {
+    opacity: .4;
+}
+
+.card_text {
+    position: absolute;
+    padding: 0 1em;
+    color: #fff;
+    opacity: 0;
+    transition: opacity ease-out 250ms;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+    /* top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%; */
+}
+
+.card:hover .card_text {
+    opacity: 1;
+}
+
+.card_title {
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 1.2rem;
+    margin: 2rem;
+}
+
+h1::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: #00BFFF;
+    
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: #00BFFF;
+    
+}
+
+a {
+    position: relative;
+    overflow: hidden;
+    color: #272727;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2rem;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+    background: #fff;
+    border: #272727 solid 4px;
+    z-index: -1;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #00BFFF;
+    transform: rotate(0deg) translate(-75%, 50%);
+    transform-origin: top left;
+    transition: transform 300ms;
+    z-index: -2;
+}
+
+a:hover::after{
+    transform: rotate(0) translate(0,0);
+    
+}
+
+
+/*
+a {
+    color: #00BFFF;
+    text-decoration: none;
+}
+
+a[href$='.pdf']::after {
+    content: '\f1c1';
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900;
+    font-size: .9em;
+}
+
+
+a[href$=^='http']::after {
+    content: '\f35d';
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900;
+    font-size: .9em;
+}
+*/
+
+/*p:hover one colon is pseudo class two colons is pseudo element
+You can make elements in an element with pseudo elements.
+You cannot select pseudo elements in the website. 
+Never use a pseudo element for important copy or text.
+Because pseudo element content is not selectable. 
+href$='.pdf' reference anything that ends in pdf
+[href$=^='http'] reference anything that starts with http
+*/
