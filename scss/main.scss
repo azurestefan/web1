@@ -2,7 +2,7 @@
 @import 'menu';
 
 
-$primary-color: #444;
+$primary-color: #2E3FE8;
 $secondary-color: #00CED1;
 $show-home-image: true;
 $home-image: url(../img/background1.jpg);
@@ -66,7 +66,6 @@ body {
     &.text-secondary {
       font-size: 5.5rem;
       margin-bottom: 1rem;
-     
       font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
     }
 
@@ -75,11 +74,30 @@ body {
       margin-bottom: 1.5rem;
       padding: 1rem 1rem;
       font-size: 1.6rem;
-      
       font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
     }
   }
   
+  h1:before, h1:after {
+    background-color: #fff;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+  }
+
+  h1:before {
+  right: 0.5em;
+  margin-left: -50%;
+  }
+
+  h1:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
   a {
     color: #fff;
     text-decoration: none;
